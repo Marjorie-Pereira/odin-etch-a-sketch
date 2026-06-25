@@ -1,5 +1,6 @@
 const containerDiv = document.querySelector("#container");
 const newGridButton = document.querySelector("#btn");
+const containerMaxWidth = 1350
 
 buildCustomGrid();
 interactWithGrid();
@@ -15,6 +16,8 @@ function buildCustomGrid(gridSize = 16) {
     for (let j = 0; j < gridSize; j++) {
       const gridBox = document.createElement("div");
       gridBox.classList.add("grid-box");
+      gridBox.style.width = `${containerMaxWidth / gridSize}px`;
+      gridBox.style.height = `${containerMaxWidth / gridSize}px`;
       gridRow.appendChild(gridBox);
     }
   }
