@@ -15,8 +15,12 @@ for (let i = 0; i < 16; i++) {
 
 const gridBoxes = document.querySelectorAll(".grid-box");
 
+const opacityIncrease = 10;
+
 gridBoxes.forEach((box) => {
   box.addEventListener("mouseover", (e) => {
-    box.style.backgroundColor = "red";
+    const currentOpacity = Number(box.style.opacity) * 100;
+    const newOpacity = currentOpacity + opacityIncrease;
+    box.style.opacity = `${newOpacity}%`;
   });
 });
