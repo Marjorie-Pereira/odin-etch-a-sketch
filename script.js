@@ -1,26 +1,47 @@
 const containerDiv = document.querySelector("#container");
-// 16x16 grid
+const newGridButton = document.querySelector("#btn");
 
-for (let i = 0; i < 16; i++) {
-  const gridRow = document.createElement("div");
-  gridRow.classList.add("grid-row");
-  containerDiv.appendChild(gridRow);
+buildCustomGrid();
+interactWithGrid();
 
-  for (let j = 0; j < 16; j++) {
-    const gridBox = document.createElement("div");
-    gridBox.classList.add("grid-box");
-    gridRow.appendChild(gridBox);
+function buildCustomGrid(gridSize = 16) {
+  containerDiv.innerHTML = "";
+
+  for (let i = 0; i < gridSize; i++) {
+    const gridRow = document.createElement("div");
+    gridRow.classList.add("grid-row");
+    containerDiv.appendChild(gridRow);
+
+    for (let j = 0; j < gridSize; j++) {
+      const gridBox = document.createElement("div");
+      gridBox.classList.add("grid-box");
+      gridRow.appendChild(gridBox);
+    }
   }
 }
 
-const gridBoxes = document.querySelectorAll(".grid-box");
+newGridButton.addEventListener("click", () => {
+  let size = Number(
+    prompt("Choose dimension for the grid (between 1 and 100):"),
+  );
 
-const opacityIncrease = 10;
+  while (size <= 0 || size > 100 || isNaN(size)) {
+    size = prompt("Please, insert a valid input (between 1 and 100):");
+  }
 
-gridBoxes.forEach((box) => {
-  box.addEventListener("mouseover", (e) => {
-    const currentOpacity = Number(box.style.opacity) * 100;
-    const newOpacity = currentOpacity + opacityIncrease;
-    box.style.opacity = `${newOpacity}%`;
-  });
+  buildCustomGrid(size);
+  interactWithGrid();
 });
+
+function interactWithGrid() {
+  const gridBoxes = document.querySelectorAll(".grid-box");
+ 
+  const opacityIncrease = 10;
+  gridBoxes.forEach((box) => {
+    box.addEventListener("mouseover", (e) => {
+      const currentOpacity = Number(box.style.opacity) * 100;
+      const newOpacity = currentOpacity + opacityIncrease;
+      box.style.opacity = `${newOpacity}%`;
+    });
+  });
+}
