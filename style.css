@@ -4,15 +4,37 @@
   box-sizing: border-box;
 }
 
+body {
+  text-align: center;
+}
+
 #container {
+  
   min-height: 100vh;
+  border: 0.5rem outset pink;
+  margin: auto;
+  width: fit-content;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin: 1rem;
+  color: #fff;
+  background-color: limegreen;
+  padding: 13px;
+  font-size: large;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: rgb(129, 223, 129);
+  cursor: pointer;
 }
 
 .grid-row {
-  border-right: 0.5rem solid pink;
-  border-left: 0.5rem solid pink;
-  margin: auto;
-  width: fit-content;
+  
   display: flex;
   justify-content: center;
 }
