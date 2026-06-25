@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  background-color: rgb(121, 235, 165);
+  min-height: 100vh;
+}
+
+.grid-row {
+  margin-bottom: 4px;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+.grid-box {
+  background-color: blueviolet;
+  width: 40px;
+  height: 40px;
+}
