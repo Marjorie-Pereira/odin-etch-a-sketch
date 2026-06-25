@@ -5,18 +5,21 @@
 }
 
 #container {
-  background-color: rgb(121, 235, 165);
   min-height: 100vh;
 }
 
 .grid-row {
-  margin-bottom: 4px;
+  border-right: 0.5rem solid pink;
+  border-left: 0.5rem solid pink;
+  margin: auto;
+  width: fit-content;
   display: flex;
-  gap: 4px;
   justify-content: center;
 }
 .grid-box {
-  background-color: blueviolet;
   width: 50px;
   height: 50px;
+  margin: 2px;
+  background-color: greenyellow;
+  opacity: 0;
 }
