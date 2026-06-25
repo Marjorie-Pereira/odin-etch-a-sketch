@@ -1,6 +1,6 @@
 const containerDiv = document.querySelector("#container");
 const newGridButton = document.querySelector("#btn");
-const containerMaxWidth = 1350
+const containerMaxWidth = 960;
 
 buildCustomGrid();
 interactWithGrid();

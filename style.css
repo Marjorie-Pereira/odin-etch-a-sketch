@@ -1,19 +1,11 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  
 }
 
 body {
   text-align: center;
-}
-
-#container {
-  border: 0.5rem outset pink;
-  margin: auto;
-  width: fit-content;
-  margin-bottom: 1rem;
-  max-width: 1350px;
 }
 
 button {
@@ -32,15 +24,22 @@ button:hover {
   cursor: pointer;
 }
 
+#container {
+  border: 0.5rem outset pink;
+  margin: auto;
+  margin-bottom: 1rem;
+  width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .grid-row {
-  
   display: flex;
   justify-content: center;
+  gap: 2px
 }
 .grid-box {
-  margin: 2px;
   background-color: greenyellow;
   opacity: 0;
-  max-width: 200px;
-  max-height: 200px;
 }
